@@ -98,7 +98,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel4" max="32767" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txt_idasig" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="txt_nota" min="-2" pref="220" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -133,7 +133,7 @@
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="txt_idasig" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="txt_nota" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -216,10 +216,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ID Asignaci&#xf3;n"/>
+            <Property name="text" type="java.lang.String" value="Nota Asig"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_idasig">
+        <Component class="javax.swing.JTextField" name="txt_nota">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e3" green="e3" red="e3" type="rgb"/>

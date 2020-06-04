@@ -216,7 +216,7 @@ public class MantenimientoJornadas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO SE REGISTRO NINGUNA JONADA DE BUSQUEDA");
         }else{
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from jornadas where codigo_jornada = ?");
             pst.setString(1, cboBuscar.getSelectedItem().toString());
 
@@ -242,7 +242,7 @@ public class MantenimientoJornadas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this,"NO PUEDE HABER CAMPOS VACIOS");
         }else{
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("insert into jornadas values(?,?,?)");
 
             pst.setString(1, txt_codigojornada.getText().trim());
@@ -265,7 +265,7 @@ public class MantenimientoJornadas extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this,"NO PUEDE HABER CAMPOS VACIOS");
         }else{
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("delete from jornadas where codigo_jornada= ?");
 
             pst.setString(1, cboBuscar.getSelectedItem().toString());
@@ -291,7 +291,7 @@ public class MantenimientoJornadas extends javax.swing.JInternalFrame {
         try {
             String ID = cboBuscar.getSelectedItem().toString();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("update jornadas set codigo_jornada= ?, nombre_jornada=?, estatus_jornada=?  where codigo_jornada= " + ID);
 
             pst.setString(1, txt_codigojornada.getText().trim());
@@ -313,7 +313,7 @@ public class MantenimientoJornadas extends javax.swing.JInternalFrame {
     public void buscarJornada(){
         try{
           
-        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
         PreparedStatement pst = cn.prepareStatement("select codigo_jornada from jornadas");
             ResultSet rs = pst.executeQuery();
 

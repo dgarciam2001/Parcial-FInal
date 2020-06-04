@@ -208,7 +208,7 @@ public class AsignacionCursoMaestro extends javax.swing.JInternalFrame {
                 
 
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
 
                 PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosmastros values(?,?,?,?,?,?,?)");
 
@@ -252,56 +252,56 @@ public class AsignacionCursoMaestro extends javax.swing.JInternalFrame {
     public void cboDBMaestroAlumnos() {
 
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
 
-            PreparedStatement pst = cn.prepareStatement("select nombre_carrera from carreras");
+            PreparedStatement pst = cn.prepareStatement("select codigo_carrera from carreras");
             ResultSet rs = pst.executeQuery();
 
             cboCodigoCarrera.addItem("Seleccione una opción");
             while (rs.next()) {
-                cboCodigoCarrera.addItem(rs.getString("nombre_carrera"));
+                cboCodigoCarrera.addItem(rs.getString("codigo_carrera"));
             }
-            PreparedStatement pst1 = cn.prepareStatement("select nombre_sede from sedes");
+            PreparedStatement pst1 = cn.prepareStatement("select codigo_sede from sedes");
             ResultSet rs1 = pst1.executeQuery();
 
             cboCodigoSede.addItem("Seleccione una opción");
             while (rs1.next()) {
-                cboCodigoSede.addItem(rs.getString("nombre_sede"));
+                cboCodigoSede.addItem(rs.getString("codigo_sede"));
             }
-            PreparedStatement pst2 = cn.prepareStatement("select nombre_jornada from jornadas");
+            PreparedStatement pst2 = cn.prepareStatement("select codigo_jornada from jornadas");
             ResultSet rs2 = pst2.executeQuery();
 
             cboCodigoJornada.addItem("Seleccione una opción");
             while (rs2.next()) {
-                cboCodigoJornada.addItem(rs.getString("nombre_jornada"));
+                cboCodigoJornada.addItem(rs.getString("codigo_jornada"));
             }
-            PreparedStatement pst3 = cn.prepareStatement("select nombre_seccion from secciones");
+            PreparedStatement pst3 = cn.prepareStatement("select codigo_seccion from secciones");
             ResultSet rs3 = pst3.executeQuery();
 
             cboCodigoSeccion.addItem("Seleccione una opción");
             while (rs3.next()) {
-                cboCodigoSeccion.addItem(rs.getString("nombre_seccion"));
+                cboCodigoSeccion.addItem(rs.getString("codigo_seccion"));
             }
-            PreparedStatement pst4 = cn.prepareStatement("select nombre_aula from aulas");
+            PreparedStatement pst4 = cn.prepareStatement("select codigo_aula from aulas");
             ResultSet rs4 = pst4.executeQuery();
 
             cboCodigoAula.addItem("Seleccione una opción");
             while (rs4.next()) {
-                cboCodigoAula.addItem(rs.getString("nombre_aula"));
+                cboCodigoAula.addItem(rs.getString("codigo_aula"));
             }
-            PreparedStatement pst5 = cn.prepareStatement("select nombre_curso from cursos");
+            PreparedStatement pst5 = cn.prepareStatement("select codigo_curso from cursos");
             ResultSet rs5 = pst5.executeQuery();
 
             cboCodigoCurso.addItem("Seleccione una opción");
             while (rs5.next()) {
-                cboCodigoCurso.addItem(rs.getString("nombre_curso"));
+                cboCodigoCurso.addItem(rs.getString("codigo_curso"));
             }
-            PreparedStatement pst6 = cn.prepareStatement("select nombre_maestro from maestros");
+            PreparedStatement pst6 = cn.prepareStatement("select codigo_maestro from maestros");
             ResultSet rs6 = pst6.executeQuery();
 
             cboCodigoMaestro.addItem("Seleccione una opción");
             while (rs6.next()) {
-                cboCodigoMaestro.addItem(rs.getString("nombre_maestro"));
+                cboCodigoMaestro.addItem(rs.getString("codigo_maestro"));
             }
 
         } catch (Exception e) {

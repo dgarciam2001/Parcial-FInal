@@ -146,7 +146,7 @@ public class ConsultasAsignacionAlumnos extends javax.swing.JInternalFrame {
            
 
 
-           Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+           Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pstR = cn.prepareStatement("select * from asignacioncursosalumnos where carnet_alumno = ?");
 
             pstR.setString(1, cboBuscar.getSelectedItem().toString());
@@ -255,7 +255,7 @@ public class ConsultasAsignacionAlumnos extends javax.swing.JInternalFrame {
     public void cboBuscarConsulta(){
         try{
           
-        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
         PreparedStatement pst = cn.prepareStatement("select carnet_alumno from alumnos");
             ResultSet rs = pst.executeQuery();
 

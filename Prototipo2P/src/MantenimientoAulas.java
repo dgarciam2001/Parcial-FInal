@@ -202,7 +202,7 @@ public class MantenimientoAulas extends javax.swing.JInternalFrame {
             
         }else{
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("insert into aulas values(?,?,?)");
 
             pst.setString(1, txt_codigoaula.getText().trim());
@@ -227,7 +227,7 @@ public class MantenimientoAulas extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(this,"NO SE INGRESO NINGUN REGISTRO PARA ELIMINAR","WARNING",JOptionPane.WARNING_MESSAGE);
         }else{
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("delete from aulas where codigo_aula= ?");
 
             pst.setString(1, cboBuscar.getSelectedItem().toString());
@@ -259,7 +259,7 @@ public class MantenimientoAulas extends javax.swing.JInternalFrame {
         try {
             String ID = cboBuscar.getSelectedItem().toString();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("update aulas set codigo_aula= ?, nombre_aula=?, estatus_aula=?  where codigo_aula= " + ID);
 
             pst.setString(1, txt_codigoaula.getText().trim());
@@ -289,7 +289,7 @@ public class MantenimientoAulas extends javax.swing.JInternalFrame {
             
         }else{
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from aulas where codigo_aula = ?");
             pst.setString(1, cboBuscar.getSelectedItem().toString());
 
@@ -325,7 +325,7 @@ public class MantenimientoAulas extends javax.swing.JInternalFrame {
     public void buscarAula(){
     try{
           
-        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
         PreparedStatement pst = cn.prepareStatement("select codigo_aula from aulas");
             ResultSet rs = pst.executeQuery();
 

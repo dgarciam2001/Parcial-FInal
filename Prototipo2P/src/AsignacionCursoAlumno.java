@@ -38,7 +38,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txt_idasig = new javax.swing.JTextField();
+        txt_nota = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         label_status = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -79,10 +79,10 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
         jLabel3.setText("Carnet del Alumno:");
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel4.setText("ID Asignación");
+        jLabel4.setText("Nota Asig");
 
-        txt_idasig.setBackground(new java.awt.Color(227, 227, 227));
-        txt_idasig.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_nota.setBackground(new java.awt.Color(227, 227, 227));
+        txt_nota.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel5.setText("Código de la Carrera:");
@@ -201,7 +201,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_idasig, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_nota, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblCodigoJornada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -229,7 +229,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_idasig, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_nota, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -289,7 +289,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
 
     private void buttonG1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonG1MouseClicked
         //Codigo que permite insertar registros en al base de datos
-        if (cmbCodigoCarrera.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoSede.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoJornada.getSelectedItem().toString() == "Seleccione una opción" || cmdCodigoSeccion.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoAula.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoCurso.getSelectedItem().toString() == "Seleccione una opción" || cmbCarnteAlumno.getSelectedItem().toString() == "Seleccione una opción" || txt_idasig.getText().isEmpty()) {
+        if (cmbCodigoCarrera.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoSede.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoJornada.getSelectedItem().toString() == "Seleccione una opción" || cmdCodigoSeccion.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoAula.getSelectedItem().toString() == "Seleccione una opción" || cmbCodigoCurso.getSelectedItem().toString() == "Seleccione una opción" || cmbCarnteAlumno.getSelectedItem().toString() == "Seleccione una opción" || txt_nota.getText().isEmpty()) {
 
             JOptionPane.showMessageDialog(this, "cOMPLETE LOS CAMPOS VACIOS.", "WARNING", JOptionPane.WARNING_MESSAGE);
 
@@ -307,7 +307,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
             lblCodigoAula.setText("");
             lblCodigoCurso.setText("");
             lblNombreAlumno.setText("");
-            txt_idasig.setText("");
+            txt_nota.setText("");
 
         }
         String departamento = cmbCarnteAlumno.getSelectedItem().toString();
@@ -316,17 +316,18 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
             return;
         } else {
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?,?,?)");
 
-                pst.setString(1, txt_idasig.getText().trim());
-                pst.setString(2, lblCodigoCarrera.getText().trim());
-                pst.setString(3, lblCodigoSede.getText().trim());
-                pst.setString(4, lblCodigoJornada.getText().trim());
-                pst.setString(5, lblCodigoSeccion.getText().trim());
-                pst.setString(6, lblCodigoAula.getText().trim());
-                pst.setString(7, lblCodigoCurso.getText().trim());
-                pst.setString(8, cmbCarnteAlumno.getSelectedItem().toString());
+               
+                pst.setString(1, lblCodigoCarrera.getText().trim());
+                pst.setString(2, lblCodigoSede.getText().trim());
+                pst.setString(3, lblCodigoJornada.getText().trim());
+                pst.setString(4, lblCodigoSeccion.getText().trim());
+                pst.setString(5, lblCodigoAula.getText().trim());
+                pst.setString(6, lblCodigoCurso.getText().trim());
+                pst.setString(7, cmbCarnteAlumno.getSelectedItem().toString());
+                pst.setString(8, txt_nota.getText().trim());
 
                 pst.executeUpdate();
 
@@ -344,7 +345,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
                 lblCodigoAula.setText("");
                 lblCodigoCurso.setText("");
                 lblNombreAlumno.setText("");
-                txt_idasig.setText("");
+                txt_nota.setText("");
 
                 JOptionPane.showMessageDialog(this, "REGISTRO EXITOSO", "Notificación", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
@@ -360,7 +361,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
 
 //Nombre alumno de carnet
       try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select nombre_alumno from alumnos where carnet_alumno= ?");
 
             pst.setString(1, cmbCarnteAlumno.getSelectedItem().toString());
@@ -383,7 +384,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private void cmbCodigoCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCodigoCarreraActionPerformed
         // codico carrera de nombre carrera
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select  codigo_carrera from carreras where nombre_carrera= ?");
 
             pst.setString(1, cmbCodigoCarrera.getSelectedItem().toString());
@@ -406,7 +407,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private void cmbCodigoJornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCodigoJornadaActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select  codigo_jornada from jornadas where nombre_jornada= ?");
 
             pst.setString(1, cmbCodigoJornada.getSelectedItem().toString());
@@ -429,7 +430,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private void cmbCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCodigoCursoActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select  codigo_curso from cursos where nombre_curso= ?");
 
             pst.setString(1, cmbCodigoCurso.getSelectedItem().toString());
@@ -451,7 +452,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private void cmdCodigoSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCodigoSeccionActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select  codigo_seccion from secciones where nombre_seccion= ?");
 
             pst.setString(1, cmdCodigoSeccion.getSelectedItem().toString());
@@ -472,7 +473,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private void cmbCodigoAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCodigoAulaActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select  codigo_aula from aulas where nombre_aula= ?");
 
             pst.setString(1, cmbCodigoAula.getSelectedItem().toString());
@@ -494,7 +495,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private void cmbCodigoSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCodigoSedeActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select  codigo_sede from sedes where nombre_sede= ?");
 
             pst.setString(1, cmbCodigoSede.getSelectedItem().toString());
@@ -528,7 +529,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
         lblCodigoAula.setText("");
         lblCodigoCurso.setText("");
         lblNombreAlumno.setText("");
-        txt_idasig.setText("");    
+        txt_nota.setText("");    
         
         comboDBCursoAlumnos();
         
@@ -536,7 +537,7 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
 
     public void comboDBCursoAlumnos() {
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
 
             PreparedStatement pst = cn.prepareStatement("select nombre_carrera from carreras");
             ResultSet rs = pst.executeQuery();
@@ -622,6 +623,6 @@ public class AsignacionCursoAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCodigoSeccion;
     private javax.swing.JLabel lblCodigoSede;
     private javax.swing.JLabel lblNombreAlumno;
-    private javax.swing.JTextField txt_idasig;
+    private javax.swing.JTextField txt_nota;
     // End of variables declaration//GEN-END:variables
 }

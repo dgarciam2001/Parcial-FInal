@@ -356,7 +356,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
             String id_curso = new String();
 
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from asignacioncursosalumnos where id_asignacion = ?");
             pst.setString(1, cboIdAsigAlumno.getSelectedItem().toString());
 
@@ -377,7 +377,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
         }
         String Nombre = new String();
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from alumnos where carnet_alumno = " + id_al);
             ResultSet rs = pst.executeQuery();
 
@@ -395,7 +395,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
         //---
         String NombreCur = new String ();
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from cursos where codigo_curso = " + id_curso);
             ResultSet rs = pst.executeQuery();
 
@@ -435,7 +435,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
         String totala  = Float.toString(total);
         txt_total.setText(totala);
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("insert into asignacionnota values(?,?,?,?,?,?)");
             pst.setString(1, txt_nota1.getText().trim());
             pst.setString(2, txt_nota2.getText().trim());
@@ -486,7 +486,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
             try {
                 String ID = cboIdAsigAlumno.getSelectedItem().toString();
 
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("update asignacionnota set parcial_1 = ?, parcial_2 =?, parcial_3 =?, acumulado =?,total=?  where id_asignacion = " + ID);
 
                 pst.setString(1, txt_nota1.getText().trim());
@@ -511,7 +511,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from asignacionnota where id_asignacion = ?");
             pst.setString(1, cboIdAsigNota.getSelectedItem().toString());
 
@@ -535,7 +535,7 @@ public class AsignacionNota extends javax.swing.JInternalFrame {
 
         public void cboAsigNotas(){
         try{
-        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
         PreparedStatement pst = cn.prepareStatement("select id_asignacion from asignacioncursosalumnos");
             ResultSet rs = pst.executeQuery();
 

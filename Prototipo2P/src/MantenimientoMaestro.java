@@ -242,7 +242,7 @@ public class MantenimientoMaestro extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO SE INGRESO NINGUN MAESTRO DE BUSQUEDA");
         } else {
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("select * from maestros where codigo_maestro = ?");
             pst.setString(1, cboBuscar.getSelectedItem().toString());
 
@@ -274,7 +274,7 @@ public class MantenimientoMaestro extends javax.swing.JInternalFrame {
         } else {
 
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
                 PreparedStatement pst = cn.prepareStatement("delete from maestros where codigo_maestro = ?");
 
                 pst.setString(1, cboBuscar.getSelectedItem().toString());
@@ -304,7 +304,7 @@ public class MantenimientoMaestro extends javax.swing.JInternalFrame {
            try {
             String ID = cboBuscar.getSelectedItem().toString();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("update maestros set codigo_maestro = ?, nombre_maestro=?, direccion_maestro=?, telefono_maetro=?, email_maestro=?, estatus_maestro=?  where codigo_maestro = " + ID);
 
             pst.setString(1, txt_codigo.getText().trim());
@@ -338,7 +338,7 @@ public class MantenimientoMaestro extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "NO PUEDE HABER CAMPOS VACIOS","WARNING",JOptionPane.WARNING_MESSAGE);
         } else {
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
             PreparedStatement pst = cn.prepareStatement("insert into maestros values(?,?,?,?,?,?)");
 
             pst.setString(1, txt_codigo.getText().trim());
@@ -366,7 +366,7 @@ public class MantenimientoMaestro extends javax.swing.JInternalFrame {
         public void buscarMaestro(){
             try{
           
-        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "jorgito5828H");
+        Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "Rochi1523");
         PreparedStatement pst = cn.prepareStatement("select codigo_maestro from maestros");
             ResultSet rs = pst.executeQuery();
 
